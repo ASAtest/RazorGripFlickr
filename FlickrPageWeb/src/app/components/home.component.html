@@ -1,0 +1,13 @@
+<button class="button" [disabled]="loading" (click)=refreshImg()>Refresh Image</button>
+
+<div class="inContent" align="center">
+    <img *ngIf="loading" src="assets/images/load.gif" alt="loading">
+    <div *ngIf="!loading">
+        <h1>{{currImg.title}}</h1>
+        <p [innerHTML]="currImg.description"></p>
+        {{currImg.date_taken | date: 'dd/MM/yyyy HH:mm:ss'}}
+    </div>
+</div>
+
+
+
